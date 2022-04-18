@@ -4,7 +4,7 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - DgagneProjOne
 
 env:
-  AZURE_WEBAPP_NAME: 'DgagneProjOne'    # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: 'ProjectOneDanG'    # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: './Build'   # set this to the path to your web app project, defaults to the repository root
 
 on:
@@ -55,7 +55,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'DgagneProjOne'
+          app-name: 'ProjectOneDanG'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B2B1282D87EE46A8A87F56DCC782A81F }}
+          publish-profile: ${{ secrets.DAN_AZURE_PROFILE }}
           package: .
