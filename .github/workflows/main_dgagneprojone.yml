@@ -12,7 +12,7 @@ on:
     #branches:
      # - main
     paths:
-      -'P_ONE_API/**'
+      -'P_ONE_API/**/**'
   workflow_dispatch:
 
 jobs:
