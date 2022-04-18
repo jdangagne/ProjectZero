@@ -51,7 +51,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build ./P_One_API/P_ONE_API.sln --configuration Release 
+        run: dotnet build ./P_One_API/P_One_API/P_One.API.csproj  --configuration Release 
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
