@@ -3,7 +3,7 @@ using P_One.Logic;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//find the error
+
 //Connection for localhost testing
 //string connectionString = builder.Configuration["connectionString"];
 //Connection for Deployment to Azure
