@@ -9,7 +9,8 @@ env:
 
 on:
   push:
-    branches:
+    paths:
+      -'P_ONE_API/**'
       - main
   workflow_dispatch:
 
