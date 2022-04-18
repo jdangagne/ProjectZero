@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 3.1.402
 
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build ./P_One_API/P_One_API.sln --configuration Release -o ./Test
 
     - name: Test
       run: dotnet test --logger "trx;LogFileName=test-results.trx" || true
