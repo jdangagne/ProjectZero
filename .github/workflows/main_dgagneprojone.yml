@@ -10,7 +10,7 @@ env:
 on:
   push:
     branches: [ main ]
-    paths: -'P_One_API/**/*.cs'    
+    paths: -'**/*.cs'    
   workflow_dispatch:
 
 jobs:
