@@ -21,10 +21,10 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build ./P_One_ConsoleApp --tag dangapp:$(date +%s)
+      run: docker build ./P_One_ConsoleApp --tag dangapp:$(date +%Y%m%d%H)
       
     - name: Tag the image
-      run: docker tag dangapp:$(date +%s) ${{secrets.DOCKER_USERNAME}}/projectoneapp:dangapp
+      run: docker tag dangapp:$(date +%Y%m%d%H) ${{secrets.DOCKER_USERNAME}}/projectoneapp:dangapp
       
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USERNAME}}/projectoneapp:dangapp
