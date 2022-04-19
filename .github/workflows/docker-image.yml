@@ -23,5 +23,8 @@ jobs:
     - name: Build the Docker image
       run: docker build ./P_One_ConsoleApp --tag dangapp:$(date +%s)
       
+    - name: Tag the image
+      run: docker tag dangapp:$(date +%s) ${{secrets.DOCKER_USERNAME}}/projectoneapp:dangapp
+      
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USERNAME}}/projectoneapp:dangapp
