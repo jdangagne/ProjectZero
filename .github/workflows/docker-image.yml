@@ -24,4 +24,4 @@ jobs:
       run: docker build ./P_One_ConsoleApp --tag dangapp:$(date +%s)
       
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USERNAME}}/projectoneapp
+      run: docker push ${{secrets.DOCKER_USERNAME}}/projectoneapp:dangapp
