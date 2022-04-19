@@ -44,5 +44,15 @@ namespace P_One.Logic
             return sb.ToString();
         }
 
+        public string CheckIfOverloaded()
+        {
+            string overloaded;
+            if (load>10)
+            { overloaded ="You can't carry anymore!\nGo dump the trash outside!"; }
+            else
+            { overloaded ="Items you can clean!"; }
+            return overloaded;
+        }
+
     }
 }
