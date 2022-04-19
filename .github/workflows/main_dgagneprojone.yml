@@ -11,8 +11,8 @@ on:
   push:
     branches:
       - main
-      paths:
-        -'P_ONE_API/**/**'
+    paths:
+      -'P_ONE_API/**/**'
   workflow_dispatch:
 
 jobs:
