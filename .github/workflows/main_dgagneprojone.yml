@@ -9,10 +9,10 @@ env:
 
 on:
   push:
-    #branches:
-     # - main
-    paths:
-      -'P_ONE_API/**/**'
+    branches:
+      - main
+      paths:
+        -'P_ONE_API/**/**'
   workflow_dispatch:
 
 jobs:
@@ -30,6 +30,18 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build ./P_One_API/P_One_API.sln  --configuration Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: Test
+        run: dotnet test ./P_One_API/P_One_Tests/P_One.Tests.csproj --logger "trx;LogFileName=test-results.trx" || true
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: DotNET Tests
+          path: "**/test-results.trx"                            
+          reporter: dotnet-trx
+          fail-on-error: true
 
       - name: dotnet publish
         run: dotnet publish ./P_One_API/P_One_API.sln -o ${{env.DOTNET_ROOT}}/myapp
